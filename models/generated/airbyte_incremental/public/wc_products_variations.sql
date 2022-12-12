@@ -20,3 +20,19 @@ where 1 = 1
 and _airbyte_active_row = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
+union all
+
+select
+    _airbyte_unique_key,
+    sku,
+    price,
+    _airbyte_ab_id,
+    _airbyte_emitted_at,
+    {{ current_timestamp() }} as _airbyte_normalized_at,
+    _airbyte_wc_products_hashid
+from {{ ref('wc_products_scd') }}
+-- wc_products from {{ source('public', '_airbyte_raw_wc_products') }}
+where 1 = 1
+and _airbyte_active_row = 1
+{{ incremental_clause('_airbyte_emitted_at', this) }}
+
