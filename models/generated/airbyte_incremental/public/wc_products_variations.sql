@@ -33,7 +33,8 @@ select
     {{ adapter.quote('name') }},
     sku,
     price,
-     id as parent_id,
+    
+     CAST(id AS bigint)  as parent_id,
     tags,
     images,
     _airbyte_ab_id,
