@@ -21,7 +21,6 @@ select
 	sale_price,
     parent_id,
     permalink,
-    categories,
     price_html,
     sale_price,
     short_description,
