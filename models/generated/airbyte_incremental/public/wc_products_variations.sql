@@ -81,7 +81,7 @@ select
 from {{ ref('wc_products_variations_scd') }}
 
 left join {{ ref('wc_products_scd') }}
-        on {{ ref('wc_products_scd') }}.customer_id = {{ ref('wc_products_variations_scd') }}.customer_id
+        on {{ ref('wc_products_scd') }}.id = {{ ref('wc_products_variations_scd') }}.parent_id
 -- wc_products_variations from {{ source('public', '_airbyte_raw_wc_products_variations') }}
 where 1 = 1
 and _airbyte_active_row = 1
