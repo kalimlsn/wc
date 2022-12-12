@@ -1,0 +1,13 @@
+version: 2
+sources:
+- name: public
+  quoting:
+    database: true
+    schema: false
+    identifier: false
+  tables:
+  - name: _airbyte_raw_wc_coupons
+  - name: _airbyte_raw_wc_customers
+  - name: _airbyte_raw_wc_orders
+  - name: _airbyte_raw_wc_products
+  - name: _airbyte_raw_wc_products_variations
