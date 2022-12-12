@@ -8,8 +8,12 @@
 -- depends_on: {{ ref('wc_products_variations_scd') }}
 select
     _airbyte_unique_key,
+    {{ adapter.quote('id') }},
+    {{ adapter.quote('name') }},
     sku,
     price,
+    tags,
+    images,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
@@ -24,8 +28,12 @@ union all
 
 select
     _airbyte_unique_key,
+    {{ adapter.quote('id') }},
+    {{ adapter.quote('name') }},
     sku,
     price,
+    tags,
+    images,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
