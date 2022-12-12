@@ -14,6 +14,8 @@ select
     price,
     parent_id,
     _airbyte_ab_id,
+    date_created,
+    date_modified,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
     _airbyte_wc_products_variations_hashid
