@@ -35,7 +35,7 @@ select
     sku,
     price,
      CAST(id AS bigint)  as parent_id,
-     {{ adapter.quote('attributes') }},
+     'Null' as attributes ,
      date_modified as updated_at ,
      date_created as created_at ,
     _airbyte_ab_id,
